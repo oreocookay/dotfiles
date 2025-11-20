@@ -1,0 +1,62 @@
+# stack windows
+alt - s : yabai -m space --layout stack
+
+# tile windows vertically
+alt - d : yabai -m space --layout bsp
+
+# tile windows horizontally
+alt + cmd - d : yabai -m window --toggle split
+
+# float windows
+alt - e : yabai -m space --layout float
+
+# focus windows
+alt - k : yabai -m window --focus north
+alt - j : yabai -m window --focus south
+alt - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west
+
+# swap windows
+alt + cmd - k : yabai -m window --swap north
+alt + cmd - j : yabai -m window --swap south
+alt + cmd - l : yabai -m window --swap east
+alt + cmd - h : yabai -m window --swap west
+
+# focus spaces
+alt - z : yabai -m space --focus 1
+alt - x : yabai -m space --focus 2
+alt - c : yabai -m space --focus 3
+alt - v : yabai -m space --focus 4
+alt - b : yabai -m space --focus 5
+alt - n : yabai -m space --focus 6
+alt - m : yabai -m space --focus 7
+
+# move windows
+alt + cmd - z : yabai -m window --space 1 && yabai -m space --focus 1
+alt + cmd - x : yabai -m window --space 2 && yabai -m space --focus 2
+alt + cmd - c : yabai -m window --space 3 && yabai -m space --focus 3
+alt + cmd - v : yabai -m window --space 4 && yabai -m space --focus 4
+alt + cmd - b : yabai -m window --space 5 && yabai -m space --focus 5
+alt + cmd - n : yabai -m window --space 6 && yabai -m space --focus 6
+alt + cmd - m : yabai -m window --space 7 && yabai -m space --focus 7
+
+# resize windows
+ctrl + alt + cmd - h : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
+ctrl + alt + cmd - l : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
+ctrl + alt + cmd - j : yabai -m window north --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
+ctrl + alt + cmd - k : yabai -m window south --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
+
+# kill window
+alt - a : skhd -k "cmd - w"
+
+# open terminal
+alt - return : open -a Terminal ~
+
+# open safari
+alt - f : open -na /Applications/Safari.app
+
+# open chatgpt
+alt - g : osascript -e 'tell application "Safari" to activate' -e 'tell application "Safari" to tell window 1 to set URL of (make new tab) to "https://chatgpt.com/?temporary-chat=true"' -e 'tell application "Safari" to tell window 1 to set current tab to last tab'
+
+# open finder
+alt - r : open ~
